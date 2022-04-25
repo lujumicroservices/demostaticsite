@@ -19,8 +19,13 @@ orbs:
 workflows:
   sample: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
-    jobs:      
-      - aws-s3/copy:
-          from: /
-          to: s3://luju-bucket-1/
-          arguments: --recursive
+    jobs:
+      - node/test:
+          version: "15.1"
+          # after the node/test job completes, build the dist packages and save them to a workspace
+          post-steps:
+            - run: npm run build
+            - aws-s3/copy:
+                from: /
+                to: s3://luju-bucket-1/
+                arguments: --recursive
