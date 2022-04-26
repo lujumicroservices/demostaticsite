@@ -26,6 +26,9 @@ workflows:
           post-steps:
             - run: npm run build
             - aws-s3/copy:
+                aws-access-key-id: AWS_ACCESS_KEY_ID_DEV
+                aws-region: AWS_DEFAULT_REGION
+                aws-secret-access-key: AWS_SECRET_ACCESS_KEY_DEV
                 from: /
                 to: s3://luju-bucket-1/
                 arguments: --recursive
