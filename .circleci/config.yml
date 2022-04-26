@@ -29,6 +29,6 @@ workflows:
                 aws-access-key-id: AWS_ACCESS_KEY_ID_DEV
                 aws-region: AWS_DEFAULT_REGION
                 aws-secret-access-key: AWS_SECRET_ACCESS_KEY_DEV
-                from: /build/
+                from: build/
                 to: s3://luju-bucket-1/
                 arguments: --recursive
