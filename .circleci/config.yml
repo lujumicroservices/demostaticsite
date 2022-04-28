@@ -34,6 +34,8 @@ jobs:
 
     steps:
       - checkout
+      -run:
+        command: echo AWS_ACCESS_KEY_ID
       - node/install-packages:
           pkg-manager: yarn
       - run:
@@ -41,7 +43,7 @@ jobs:
           command: yarn build
 
       - aws-s3/sync:
-          aws-access-key-id: '123'
+          aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_DEFAULT_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY_DEV
           from: build/
