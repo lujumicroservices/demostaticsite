@@ -56,6 +56,8 @@ workflows:
 
       # Deploy to development on develop branch merge
       - deployToDev:
+          context:
+            - dev-deployment
           requires:
             - test-unit
           filters:
