@@ -34,8 +34,8 @@ jobs:
 
     steps:
       - checkout
-      -run:
-        command: echo AWS_ACCESS_KEY_ID
+      - run:
+          command: echo AWS_ACCESS_KEY_ID
       - node/install-packages:
           pkg-manager: yarn
       - run:
