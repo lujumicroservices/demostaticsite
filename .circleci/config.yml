@@ -25,7 +25,7 @@ workflows:
           # after the node/test job completes, build the dist packages and save them to a workspace
           post-steps:
             - run: npm run build
-            - aws-s3/copy:
+            - aws-s3/sync:
                 aws-access-key-id: AWS_ACCESS_KEY_ID_DEV
                 aws-region: AWS_DEFAULT_REGION
                 aws-secret-access-key: AWS_SECRET_ACCESS_KEY_DEV
