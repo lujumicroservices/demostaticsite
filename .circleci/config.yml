@@ -31,4 +31,4 @@ workflows:
                 aws-secret-access-key: AWS_SECRET_ACCESS_KEY_DEV
                 from: build/
                 to: s3://luju-bucket-1/develop/
-                arguments: --recursive
+             
